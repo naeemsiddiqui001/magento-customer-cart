@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Polywood_ViewCustomerCart::view_customer_cart" title="View Customer Cart"
+             translate="title" module="Polywood_ViewCustomerCart" sortOrder="50"
+             parent="Magento_Customer::customer" action="polywood/quote/index"
+             resource="Polywood_ViewCustomerCart::view_customer_cart"/>
+    </menu>
+</config>

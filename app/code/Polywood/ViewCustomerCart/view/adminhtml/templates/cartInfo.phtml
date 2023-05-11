@@ -1,0 +1,35 @@
+<?php
+/**
+ * @var Template $block
+ * @var QuoteInformation $viewModel
+ */
+
+use Magento\Backend\Block\Template;
+use Polywood\ViewCustomerCart\ViewModel\QuoteInformation;
+
+$viewModel = $block->getViewModel();
+$quoteData = $viewModel->getQuoteData();
+?>
+<?php if ($quoteData) : ?>
+    <h4>Quote ID: <?= $quoteData['quote_id'] ?></h4>
+    <h4>Subtotal: <?= $quoteData['cart_subtotal'] ?></h4>
+    <h4>Grand Total: <?= $quoteData['grand_total'] ?></h4>
+    <h4>Discount: <?= $quoteData['cart_discount'] ?></h4>
+    <div>
+        <?php foreach ($quoteData['items_data'] as $value) : ?>
+            <hr><br>
+            <div>
+                <a href="<?= $value['product_url'] ?>"><b><?= $value['product_name'] ?></b></a>
+                <br><br><p><b>Product Sku:</b> <?= $value['product_sku'] ?></p>
+                <p><b>Product Qty:</b> <?= $value['product_qty'] ?></p>
+                <p><b>Product Price:</b> <?= $value['product_price'] ?></p>
+
+                <?php if (isset($value['options'])) : ?>
+                    <?php foreach ($value['options'] as $label => $option) : ?>
+                        <p><b><?= $label ?>:</b> <?= $option ?></p>
+                    <?php endforeach; ?>
+                <?php endif;?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif;?>

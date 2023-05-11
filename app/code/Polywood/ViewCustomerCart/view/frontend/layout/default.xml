@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Backend\Block\Template" name="quote.id"
+                   template="Polywood_ViewCustomerCart::quote.phtml" after="-">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Polywood\ViewCustomerCart\ViewModel\GetQuote</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

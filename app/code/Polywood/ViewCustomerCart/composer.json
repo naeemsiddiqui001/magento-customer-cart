@@ -1,0 +1,20 @@
+{
+    "name": "polywood/module-view-customer-cart",
+    "description": "N/A",
+    "type": "magento2-module",
+    "license": "NONE",
+    "version": "1.0.0",
+    "require": {
+        "php": "~7.4.0||~8.1.0||~8.2.0",
+        "magento/framework": "103.0.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Polywood\\ViewCustomerCart\\": ""
+        }
+    }
+}
+

@@ -1,0 +1,14 @@
+<?php
+/**
+ * @var Template $block
+ * @var GetQuote $viewModel
+ */
+
+use Magento\Backend\Block\Template;
+use Polywood\ViewCustomerCart\ViewModel\GetQuote;
+
+$viewModel = $block->getViewModel();
+?>
+<?php if ($quoteId = $viewModel->getQuoteId()):?>
+    <div>Quote ID: <?= $quoteId?></div>
+<?php endif; ?>
